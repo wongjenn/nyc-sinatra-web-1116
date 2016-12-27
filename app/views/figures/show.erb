@@ -1,0 +1,21 @@
+<h1><%= @figure.name%></h1>
+<p>
+  <label for="">Landmark Name</label>
+    <% @landmarks.each do |landmark| %>
+    <ul>
+      <label for="landmark_<%=landmark.id%>"><%=landmark.name%></label>
+      <input <%= "checked" if @figure.landmark_ids.include?(landmark.id)%> type="checkbox" id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]" value="<%= landmark.id%>">
+    </ul>
+    <% end %><br>
+  </ul>
+</p>
+<label for="">Title Name</label>
+  <% @titles.each do |title| %>
+  <ul>
+    <label for="title_<%=title.id%>"><%=title.name%></label>
+    <input <%= "checked" if @figure.title_ids.include?(title.id)%> type="checkbox" id="title_<%=title.id%>" name="figure[title_ids][]" value="<%= title.id%>">
+  </ul>
+  <% end %><br>
+</ul>
+</p>
+<p><a href="/figures/<%= @figure.id%>/edit">Click to edit</a></p>

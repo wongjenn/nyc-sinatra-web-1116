@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<h1>On the index page...</h1>
+
+<ul>
+  <%@figures.each do |figure|%>
+  <li><a href="/figures/<%= figure.id%>"><%= figure.name%></a> </li>
+  <% end %>
+</ul>
+</html>
